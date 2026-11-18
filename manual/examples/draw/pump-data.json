@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "dataSources": [
+    {
+      "id": "pumpTelemetry",
+      "name": "泵站遥测",
+      "type": "http",
+      "triggerMode": "event"
+    }
+  ],
+  "variables": [
+    {
+      "id": "pumpStatus",
+      "name": "水泵状态",
+      "type": "string",
+      "defaultValue": "等待数据",
+      "source": {
+        "sourceId": "pumpTelemetry",
+        "path": "/data/status"
+      }
+    },
+    {
+      "id": "pumpTrend",
+      "name": "流量趋势",
+      "type": "array",
+      "defaultValue": [],
+      "source": {
+        "sourceId": "pumpTelemetry",
+        "path": "/data/trend"
+      },
+      "rowFields": [
+        {
+          "name": "time",
+          "type": "string"
+        },
+        {
+          "name": "flow",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+}

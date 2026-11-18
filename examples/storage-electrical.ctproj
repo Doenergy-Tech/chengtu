@@ -1,0 +1,78 @@
+{
+  "format": "chengtu.project",
+  "formatVersion": 1,
+  "document": {
+    "id": "storage-electrical",
+    "formatVersion": 1,
+    "name": "储能站一次图",
+    "p": {
+      "name": {
+        "kind": "literal",
+        "value": "储能站一次图"
+      },
+      "width": {
+        "kind": "literal",
+        "value": 1280
+      },
+      "height": {
+        "kind": "literal",
+        "value": 800
+      },
+      "zoomable": {
+        "kind": "literal",
+        "value": true
+      },
+      "displayMode": {
+        "kind": "literal",
+        "value": "fit"
+      }
+    },
+    "s": {
+      "background": {
+        "kind": "literal",
+        "value": "#ffffff"
+      }
+    },
+    "a": {},
+    "propertyDefinitions": [],
+    "scene": {
+      "elements": {},
+      "roots": [],
+      "children": {}
+    },
+    "layers": [
+      {
+        "id": "default",
+        "name": "默认图层",
+        "p": {
+          "name": {
+            "kind": "literal",
+            "value": "默认图层"
+          },
+          "locked": {
+            "kind": "literal",
+            "value": false
+          }
+        },
+        "s": {
+          "visible": {
+            "kind": "literal",
+            "value": true
+          },
+          "opacity": {
+            "kind": "literal",
+            "value": 1
+          }
+        },
+        "a": {},
+        "propertyDefinitions": []
+      }
+    ],
+    "attachments": [],
+    "requiredPlugins": []
+  },
+  "components": {},
+  "drafts": {},
+  "variables": [],
+  "previewValues": {}
+}

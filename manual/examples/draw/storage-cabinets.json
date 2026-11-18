@@ -1,0 +1,14 @@
+{
+  "format": "chengtu.electrical.cabinets",
+  "version": 1,
+  "cabinets": [
+    {
+      "id": "storageCabinet",
+      "name": "储能出线柜组",
+      "bays": [
+        { "id": "storageBayA", "name": "A 支路间隔", "circuitIds": ["branchA"] },
+        { "id": "storageBayB", "name": "B 支路间隔", "circuitIds": ["branchB"] }
+      ]
+    }
+  ]
+}

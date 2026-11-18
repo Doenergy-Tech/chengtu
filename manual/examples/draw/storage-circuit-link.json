@@ -1,0 +1,14 @@
+{
+  "format": "chengtu.electrical.circuit-link",
+  "version": 1,
+  "operation": "add",
+  "connection": {
+    "id": "tieAB",
+    "from": "breakerA",
+    "fromPort": "south",
+    "to": "breakerB",
+    "toPort": "south",
+    "verified": false,
+    "evidence": "合成回路联络线演示，待核对"
+  }
+}

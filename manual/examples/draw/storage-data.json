@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "dataSources": [
+    {
+      "id": "storageTelemetry",
+      "name": "储能站遥测",
+      "type": "http",
+      "triggerMode": "poll"
+    }
+  ],
+  "variables": [
+    {
+      "id": "storageMode",
+      "name": "储能运行状态",
+      "type": "string",
+      "defaultValue": "等待数据",
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/mode"
+      }
+    },
+    {
+      "id": "storageSoc",
+      "name": "SOC 趋势",
+      "type": "array",
+      "defaultValue": [],
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/trend"
+      },
+      "unit": "%",
+      "rowFields": [
+        {
+          "name": "time",
+          "type": "string"
+        },
+        {
+          "name": "soc",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "storagePower",
+      "name": "充放电功率趋势",
+      "type": "array",
+      "defaultValue": [],
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/trend"
+      },
+      "unit": "kW",
+      "rowFields": [
+        {
+          "name": "time",
+          "type": "string"
+        },
+        {
+          "name": "power",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+}

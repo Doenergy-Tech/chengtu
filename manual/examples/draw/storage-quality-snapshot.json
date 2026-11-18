@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "observedAt": 1800000000000,
+  "maxAgeMs": 60000,
+  "samples": [
+    {"variableId": "storage.A.power", "quality": "good", "timestamp": 1799999940000},
+    {"variableId": "storage.A.soc", "quality": "bad", "timestamp": 1799999900000},
+    {"variableId": "storage.B.power", "quality": "good", "timestamp": 0}
+  ]
+}

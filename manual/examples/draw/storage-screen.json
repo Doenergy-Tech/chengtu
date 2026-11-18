@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "title": "储能站运行概览",
+  "summary": "显示 PCS 运行状态、电池 SOC 与充放电功率趋势",
+  "questions": [],
+  "operations": [
+    {
+      "op": "insert",
+      "alias": "heading",
+      "kind": "text",
+      "componentId": "",
+      "name": "储能站运行概览",
+      "text": "储能站运行概览",
+      "x": 170,
+      "y": 65,
+      "width": 260,
+      "height": 45
+    },
+    {
+      "op": "insert",
+      "alias": "modeLabel",
+      "kind": "text",
+      "componentId": "",
+      "name": "PCS 运行状态",
+      "text": "PCS 运行状态",
+      "x": 145,
+      "y": 125,
+      "width": 190,
+      "height": 45
+    },
+    {
+      "op": "insert",
+      "alias": "mode",
+      "kind": "text",
+      "componentId": "",
+      "name": "等待数据",
+      "text": "等待数据",
+      "x": 315,
+      "y": 125,
+      "width": 145,
+      "height": 45
+    },
+    {
+      "op": "bind",
+      "target": "mode",
+      "namespace": "p",
+      "key": "text",
+      "variableId": "storageMode"
+    },
+    {
+      "op": "chart",
+      "alias": "soc",
+      "title": "电池 SOC (%)",
+      "type": "line",
+      "x": 255,
+      "y": 290,
+      "width": 440,
+      "height": 270,
+      "dataVariable": "storageSoc",
+      "categoryField": "time",
+      "valueField": "soc",
+      "seriesField": ""
+    },
+    {
+      "op": "chart",
+      "alias": "power",
+      "title": "充放电功率 (kW)",
+      "type": "line",
+      "x": 725,
+      "y": 290,
+      "width": 440,
+      "height": 270,
+      "dataVariable": "storagePower",
+      "categoryField": "time",
+      "valueField": "power",
+      "seriesField": ""
+    }
+  ]
+}

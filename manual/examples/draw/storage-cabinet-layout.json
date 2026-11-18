@@ -1,0 +1,299 @@
+{
+  "format": "chengtu.electrical.topology",
+  "version": 1,
+  "title": "储能站三支路一次图 · 自动排布",
+  "devices": [
+    {
+      "id": "transformer",
+      "name": "升压变压器",
+      "kind": "transformer",
+      "referenceOnly": true
+    },
+    {
+      "id": "main",
+      "name": "交流进线开关",
+      "kind": "breaker",
+      "referenceOnly": true
+    },
+    {
+      "id": "bus",
+      "name": "交流母线",
+      "kind": "bus",
+      "referenceOnly": true
+    },
+    {
+      "id": "pcsA",
+      "name": "PCS A",
+      "kind": "pcs",
+      "referenceOnly": true
+    },
+    {
+      "id": "pcsB",
+      "name": "PCS B",
+      "kind": "pcs",
+      "referenceOnly": true
+    },
+    {
+      "id": "batteryA",
+      "name": "电池簇 A",
+      "kind": "battery",
+      "referenceOnly": true
+    },
+    {
+      "id": "batteryB",
+      "name": "电池簇 B",
+      "kind": "battery",
+      "referenceOnly": true
+    },
+    {
+      "id": "pcsC",
+      "name": "PCS C",
+      "kind": "pcs",
+      "referenceOnly": true
+    },
+    {
+      "id": "batteryC",
+      "name": "电池簇 C",
+      "kind": "battery",
+      "referenceOnly": true
+    },
+    {
+      "id": "breakerA",
+      "name": "支路断路器 A",
+      "kind": "breaker",
+      "referenceOnly": true
+    },
+    {
+      "id": "breakerB",
+      "name": "支路断路器 B",
+      "kind": "breaker",
+      "referenceOnly": true
+    },
+    {
+      "id": "breakerC",
+      "name": "支路断路器 C",
+      "kind": "breaker",
+      "referenceOnly": true
+    }
+  ],
+  "connections": [
+    {
+      "id": "incoming",
+      "from": "transformer",
+      "to": "main",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "main-bus",
+      "from": "main",
+      "to": "bus",
+      "fromPort": "south",
+      "toPort": "tap",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "branchA",
+      "from": "bus",
+      "to": "breakerA",
+      "fromPort": "tap",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "branchB",
+      "from": "bus",
+      "to": "breakerB",
+      "fromPort": "tap",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "dcA",
+      "from": "pcsA",
+      "to": "batteryA",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "dcB",
+      "from": "pcsB",
+      "to": "batteryB",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "acA",
+      "from": "breakerA",
+      "to": "pcsA",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "acB",
+      "from": "breakerB",
+      "to": "pcsB",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "branchC",
+      "from": "bus",
+      "to": "breakerC",
+      "fromPort": "tap",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "acC",
+      "from": "breakerC",
+      "to": "pcsC",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "dcC",
+      "from": "pcsC",
+      "to": "batteryC",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    }
+  ],
+  "readings": [
+    {
+      "id": "mode",
+      "ownerId": "main",
+      "label": "运行状态",
+      "catalogDeviceId": "meterA",
+      "measurementId": "mode",
+      "unit": ""
+    },
+    {
+      "id": "powerA",
+      "ownerId": "pcsA",
+      "label": "功率",
+      "catalogDeviceId": "meterA",
+      "measurementId": "power",
+      "unit": "kW"
+    },
+    {
+      "id": "powerB",
+      "ownerId": "pcsB",
+      "label": "功率",
+      "catalogDeviceId": "meterB",
+      "measurementId": "power",
+      "unit": "kW"
+    },
+    {
+      "id": "socA",
+      "ownerId": "batteryA",
+      "label": "SOC",
+      "catalogDeviceId": "meterA",
+      "measurementId": "soc",
+      "unit": "%"
+    },
+    {
+      "id": "socB",
+      "ownerId": "batteryB",
+      "label": "SOC",
+      "catalogDeviceId": "meterB",
+      "measurementId": "soc",
+      "unit": "%"
+    },
+    {
+      "id": "voltage",
+      "ownerId": "bus",
+      "label": "母线电压",
+      "catalogDeviceId": "",
+      "measurementId": "",
+      "unit": "V"
+    },
+    {
+      "id": "powerC",
+      "ownerId": "pcsC",
+      "label": "功率",
+      "catalogDeviceId": "",
+      "measurementId": "",
+      "unit": "kW"
+    },
+    {
+      "id": "socC",
+      "ownerId": "batteryC",
+      "label": "SOC",
+      "catalogDeviceId": "",
+      "measurementId": "",
+      "unit": "%"
+    }
+  ],
+  "circuits": [
+    {
+      "id": "branchA",
+      "name": "储能支路A",
+      "deviceIds": [
+        "breakerA",
+        "pcsA",
+        "batteryA"
+      ]
+    },
+    {
+      "id": "branchB",
+      "name": "储能支路B",
+      "deviceIds": [
+        "breakerB",
+        "pcsB",
+        "batteryB"
+      ]
+    },
+    {
+      "id": "branchC",
+      "name": "储能支路C",
+      "deviceIds": [
+        "breakerC",
+        "pcsC",
+        "batteryC"
+      ]
+    }
+  ],
+  "layoutByCabinet": true,
+  "cabinets": [
+    {
+      "id": "storage",
+      "name": "储能柜组",
+      "bays": [
+        {
+          "id": "bayAC",
+          "name": "C/A 支路间隔",
+          "circuitIds": [
+            "branchC",
+            "branchA"
+          ]
+        },
+        {
+          "id": "bayB",
+          "name": "B 支路间隔",
+          "circuitIds": [
+            "branchB"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "format": "chengtu.data-config",
+  "formatVersion": 1,
+  "dataSources": {
+    "storageTelemetry": {
+      "url": "./storage-telemetry.json"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "devices": [
+    {
+      "id": "meterA",
+      "name": "储能测量单元 A",
+      "measurements": [
+        {
+          "id": "power",
+          "variableId": "storage.A.power",
+          "unit": "kW",
+          "type": "number"
+        },
+        {
+          "id": "soc",
+          "variableId": "storage.A.soc",
+          "unit": "%",
+          "type": "number"
+        },
+        {
+          "id": "mode",
+          "variableId": "storage.A.mode",
+          "unit": "",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "meterB",
+      "name": "储能测量单元 B",
+      "measurements": [
+        {
+          "id": "power",
+          "variableId": "storage.B.power",
+          "unit": "kW",
+          "type": "number"
+        },
+        {
+          "id": "soc",
+          "variableId": "storage.B.soc",
+          "unit": "%",
+          "type": "number"
+        },
+        {
+          "id": "mode",
+          "variableId": "storage.B.mode",
+          "unit": "",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

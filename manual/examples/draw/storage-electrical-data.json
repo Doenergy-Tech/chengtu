@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "dataSources": [
+    {
+      "id": "storageTelemetry",
+      "name": "储能演示遥测",
+      "type": "http",
+      "triggerMode": "poll"
+    }
+  ],
+  "variables": [
+    {
+      "id": "storage.A.power",
+      "name": "储能测量单元 A power",
+      "type": "number",
+      "unit": "kW",
+      "defaultValue": 0,
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/meterA/power"
+      }
+    },
+    {
+      "id": "storage.A.soc",
+      "name": "储能测量单元 A soc",
+      "type": "number",
+      "unit": "%",
+      "defaultValue": 0,
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/meterA/soc"
+      }
+    },
+    {
+      "id": "storage.A.mode",
+      "name": "储能测量单元 A mode",
+      "type": "string",
+      "unit": "",
+      "defaultValue": "等待数据",
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/meterA/mode"
+      }
+    },
+    {
+      "id": "storage.B.power",
+      "name": "储能测量单元 B power",
+      "type": "number",
+      "unit": "kW",
+      "defaultValue": 0,
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/meterB/power"
+      }
+    },
+    {
+      "id": "storage.B.soc",
+      "name": "储能测量单元 B soc",
+      "type": "number",
+      "unit": "%",
+      "defaultValue": 0,
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/meterB/soc"
+      }
+    },
+    {
+      "id": "storage.B.mode",
+      "name": "储能测量单元 B mode",
+      "type": "string",
+      "unit": "",
+      "defaultValue": "等待数据",
+      "source": {
+        "sourceId": "storageTelemetry",
+        "path": "/data/meterB/mode"
+      }
+    }
+  ]
+}

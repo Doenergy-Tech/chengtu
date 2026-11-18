@@ -1,0 +1,176 @@
+{
+  "format": "chengtu.electrical",
+  "version": 1,
+  "title": "储能站一次图 · 合成演示",
+  "devices": [
+    {
+      "id": "transformer",
+      "name": "升压变压器",
+      "kind": "transformer",
+      "column": 0,
+      "row": 0,
+      "span": 1,
+      "referenceOnly": true
+    },
+    {
+      "id": "main",
+      "name": "交流进线开关",
+      "kind": "breaker",
+      "column": 0,
+      "row": 1,
+      "span": 1,
+      "referenceOnly": true
+    },
+    {
+      "id": "bus",
+      "name": "交流母线",
+      "kind": "bus",
+      "column": 0,
+      "row": 2,
+      "span": 2,
+      "referenceOnly": true
+    },
+    {
+      "id": "pcsA",
+      "name": "PCS A",
+      "kind": "pcs",
+      "column": 0,
+      "row": 3,
+      "span": 1,
+      "referenceOnly": true
+    },
+    {
+      "id": "pcsB",
+      "name": "PCS B",
+      "kind": "pcs",
+      "column": 1,
+      "row": 3,
+      "span": 1,
+      "referenceOnly": true
+    },
+    {
+      "id": "batteryA",
+      "name": "电池簇 A",
+      "kind": "battery",
+      "column": 0,
+      "row": 4,
+      "span": 1,
+      "referenceOnly": true
+    },
+    {
+      "id": "batteryB",
+      "name": "电池簇 B",
+      "kind": "battery",
+      "column": 1,
+      "row": 4,
+      "span": 1,
+      "referenceOnly": true
+    }
+  ],
+  "connections": [
+    {
+      "id": "incoming",
+      "from": "transformer",
+      "to": "main",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "main-bus",
+      "from": "main",
+      "to": "bus",
+      "fromPort": "south",
+      "toPort": "tap",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "branchA",
+      "from": "bus",
+      "to": "pcsA",
+      "fromPort": "tap",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "branchB",
+      "from": "bus",
+      "to": "pcsB",
+      "fromPort": "tap",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "dcA",
+      "from": "pcsA",
+      "to": "batteryA",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    },
+    {
+      "id": "dcB",
+      "from": "pcsB",
+      "to": "batteryB",
+      "fromPort": "south",
+      "toPort": "north",
+      "verified": false,
+      "evidence": "合成演示连接，现场关系须按正式图纸核对"
+    }
+  ],
+  "readings": [
+    {
+      "id": "mode",
+      "ownerId": "main",
+      "label": "运行状态",
+      "catalogDeviceId": "meterA",
+      "measurementId": "mode",
+      "unit": ""
+    },
+    {
+      "id": "powerA",
+      "ownerId": "pcsA",
+      "label": "功率",
+      "catalogDeviceId": "meterA",
+      "measurementId": "power",
+      "unit": "kW"
+    },
+    {
+      "id": "powerB",
+      "ownerId": "pcsB",
+      "label": "功率",
+      "catalogDeviceId": "meterB",
+      "measurementId": "power",
+      "unit": "kW"
+    },
+    {
+      "id": "socA",
+      "ownerId": "batteryA",
+      "label": "SOC",
+      "catalogDeviceId": "meterA",
+      "measurementId": "soc",
+      "unit": "%"
+    },
+    {
+      "id": "socB",
+      "ownerId": "batteryB",
+      "label": "SOC",
+      "catalogDeviceId": "meterB",
+      "measurementId": "soc",
+      "unit": "%"
+    },
+    {
+      "id": "voltage",
+      "ownerId": "bus",
+      "label": "母线电压",
+      "catalogDeviceId": "",
+      "measurementId": "",
+      "unit": "V"
+    }
+  ]
+}

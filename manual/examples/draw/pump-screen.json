@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "title": "泵站监控",
+  "summary": "创建状态文字和流量趋势图，绑定已确认的字段",
+  "questions": [],
+  "operations": [
+    {
+      "op": "insert",
+      "alias": "heading",
+      "kind": "text",
+      "componentId": "",
+      "name": "泵站监控",
+      "text": "泵站监控",
+      "x": 140,
+      "y": 60,
+      "width": 220,
+      "height": 40
+    },
+    {
+      "op": "insert",
+      "alias": "status",
+      "kind": "text",
+      "componentId": "",
+      "name": "水泵状态",
+      "text": "等待数据",
+      "x": 145,
+      "y": 135,
+      "width": 220,
+      "height": 45
+    },
+    {
+      "op": "bind",
+      "target": "status",
+      "namespace": "p",
+      "key": "text",
+      "variableId": "pumpStatus"
+    },
+    {
+      "op": "chart",
+      "alias": "trend",
+      "title": "流量趋势",
+      "type": "line",
+      "x": 465,
+      "y": 320,
+      "width": 560,
+      "height": 250,
+      "dataVariable": "pumpTrend",
+      "categoryField": "time",
+      "valueField": "flow",
+      "seriesField": ""
+    }
+  ]
+}

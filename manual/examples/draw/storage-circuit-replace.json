@@ -1,0 +1,18 @@
+{
+  "format": "chengtu.electrical.circuit-edit",
+  "version": 1,
+  "operation": "replace",
+  "circuitId": "branchC",
+  "name": "站用负荷支路",
+  "devices": [
+    { "id": "auxLoad", "name": "站用负荷", "kind": "load", "column": 2, "row": 3, "span": 1, "referenceOnly": true }
+  ],
+  "positions": [{ "id": "auxLoad", "x": 940, "y": 870 }],
+  "connections": [
+    { "id": "auxFeed", "from": "bus", "fromPort": "tap", "to": "auxLoad", "toPort": "north",
+      "verified": false, "evidence": "演示图纸，现场待确认" }
+  ],
+  "readings": [
+    { "id": "auxPower", "ownerId": "auxLoad", "label": "负荷功率", "catalogDeviceId": "", "measurementId": "", "unit": "kW" }
+  ]
+}
